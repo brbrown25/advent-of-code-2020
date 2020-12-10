@@ -6,7 +6,9 @@ object Day2 extends Problem(2020, 2) {
   val pattern = """(\d+)-(\d+)\s([A-z,a-z]{1}):\s([A-z,a-z]+)""".r
 
   def run(input: List[String]): Unit = {
+    //645
     println(validPasswords(input, policy1))
+    //737
     println(validPasswords(input, policy2))
   }
 

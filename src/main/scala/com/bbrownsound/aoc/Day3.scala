@@ -20,23 +20,29 @@ object Day3 extends Problem(2020, 3) {
   }
 
   def processInput(input: List[String], multiplier: Int, nextRow: Int): Int = {
-    input.zipWithIndex.map { case (line: String, idx: Int) => 
-      if (idx > 0 && idx % nextRow == 0) {
-          checkLine(line, idx / nextRow, multiplier)
-      } else {
-        false
+    input.zipWithIndex
+      .map {
+        case (line: String, idx: Int) =>
+          if (idx > 0 && idx % nextRow == 0) {
+            checkLine(line, idx / nextRow, multiplier)
+          } else {
+            false
+          }
       }
-    }.count(identity)
+      .count(identity)
   }
 
   def run(input: List[String]): Unit = {
+    //189
     println(processInput(input, 3, 1))
-    println(List(
-      processInput(input, 1, 1),
-      processInput(input, 3, 1),
-      processInput(input, 5, 1),
-      processInput(input, 7, 1),
-      processInput(input, 1, 2)
-    ).fold(1)(_ * _))
+    //1718180100
+    println(
+      List(
+        processInput(input, 1, 1),
+        processInput(input, 3, 1),
+        processInput(input, 5, 1),
+        processInput(input, 7, 1),
+        processInput(input, 1, 2)
+      ).fold(1)(_ * _))
   }
 }

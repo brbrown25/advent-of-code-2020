@@ -6,7 +6,9 @@ object Day1 extends Problem(2020, 1) {
   def run(input: List[String]): Unit = {
     val nums: List[Int] = input.map(_.toInt)
 
+    //41979
     println(twoSum(2020, nums))
+    //193416912
     println(threeSum(2020, nums))
   }
 
